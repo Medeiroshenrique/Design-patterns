@@ -1,5 +1,11 @@
 package com.pontoevirgulasoftwaresolutions.director;
 
-public class ReportDirector {
+import com.pontoevirgulasoftwaresolutions.builders.ReportBuilder;
 
+public class ReportDirector {
+    public void construct(ReportBuilder builder){
+        builder.buildHeader();
+        builder.buildBody();
+        builder.buildFooter();
+    }
 }
