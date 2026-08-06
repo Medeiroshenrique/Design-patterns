@@ -1,17 +1,34 @@
 package com.pontoevirgulasoftwaresolutions;
 
+import com.pontoevirgulasoftwaresolutions.creators.PaymentFactory;
+import com.pontoevirgulasoftwaresolutions.creators.PixFactory;
+import com.pontoevirgulasoftwaresolutions.models.Payment;
+import com.pontoevirgulasoftwaresolutions.models.PaymentResult;
+import com.pontoevirgulasoftwaresolutions.products.PaymentProcessor;
+
+import java.math.BigDecimal;
+import java.util.UUID;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+        Payment payment = new Payment(
+                UUID.randomUUID(),
+                "Henrique Medeiros",
+                "henrique@email.com",
+                new BigDecimal("199.90"),
+                "Java Design Patterns Course",
+                "BRL"
+        );
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+        PaymentFactory factory = new PixFactory();
+        PaymentProcessor processor = factory.createProcessor();
+        processor.process(payment);
+
+        PaymentResult result = processor.process(payment);
+        System.out.println(result);
     }
+
+
 }

@@ -13,4 +13,14 @@ public class PaymentResult {
         this.message = message;
         this.paymentMethod = paymentMethod;
     }
+
+    @Override
+    public String toString() {
+        return "PaymentResult{" +
+                "success=" + success +
+                ", transactionId='" + transactionId + '\'' +
+                ", message='" + message + '\'' +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                '}';
+    }
 }
