@@ -19,7 +19,7 @@ These patterns deal with object creation mechanisms, creating objects in a manne
 
 - [x] **Singleton** — `C#`
 - [x] **Builder** — `Java`
-- [ ] **Factory Method**
+- [x] **Factory Method** — `Java`
 - [ ] **Abstract Factory**
 - [ ] **Prototype**
 
